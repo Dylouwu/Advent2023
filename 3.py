@@ -1,7 +1,13 @@
+#Making that many conditions is not the solution as it is tedious and making mistakes can happen very easily, however I dont know how to do it otherwise
 def gear_test(i, j, x, lines):
     if i > 0 and j > 0:
         if lines[i-1][j-1].isdigit() :
-            print(lines[i-1][j-1])
+            if lines[i-1][j-2].isdigit():
+                if lines[i-1][j-3].isdigit():
+                    return lines[i-1][j-3]*100 + lines[i-1][j-2]*10 + lines[i-1][j-1]
+                elif lines[i-1][j].isdigit():
+                    return lines[i-1][j-2]*100 + lines[i-1][j-1]*10 + lines[i-1][j]
+            
             #return lines[i-1][j-1] + if lines[i-1][j-2].isdigit()  add function number that returns the number
     if i > 0:
         if lines[i-1][j].isdigit() :

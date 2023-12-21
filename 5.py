@@ -12,7 +12,7 @@ def part1():
                 if line == "\n":
                     break
                 maps += line.strip().split(" \n")
-            dest.append([int(m.split(" ")[0]) for m in maps])  # Convert to int here
+            dest.append([int(m.split(" ")[0]) for m in maps])
             source.append([int(m.split(" ")[1]) for m in maps])
             reach.append([int(m.split(" ")[2]) for m in maps]) 
         for i in range(len(seeds)):

@@ -8,7 +8,6 @@ def compute1(x):
     if count == len(x):
         return 0
     element = [x[i+1] - x[i] for i in range(len(x)-1)]
-    print(element)
     return compute1(element) + x[-1]
             
 def part1():#part1

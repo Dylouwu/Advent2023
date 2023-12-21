@@ -1,3 +1,4 @@
 #Ignore input
 input/
+#Ignore desktop.ini
 desktop.ini
