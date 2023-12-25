@@ -41,6 +41,7 @@ def part1():
                 workflow.append(x.split("{")[1].strip().strip('}').split(','))
             else:
                 ratings.append(x.strip().strip('{}').split(','))
+    print(ratings)
     for rating in ratings:         
         result += check_parts(entry, workflow, rating, 'in')
     end_time = time.time()
@@ -51,7 +52,7 @@ def part2():
     start_time = time.time()
     entry = []
     workflow = []
-    ratings = []
+    rating = [0]*4
     result = 0
     with open("input/19.txt") as f:
         for x in f:
@@ -59,15 +60,17 @@ def part2():
                 break    
             entry.append(x.split("{")[0].strip())
             workflow.append(x.split("{")[1].strip().strip('}').split(','))
-    #for i in range(4000):
-        #for j in range(4000):
-            #for k in range(4000):
-                #for l in range(4000):
-                    #ratings.append(f'[x={i+1}, m={j+1}, a={k+1}, s={l+1}]')    
-    #for rating in ratings:         
-        #if check_parts(entry, workflow, rating, 'in') != 0:
-            #result += 1
-    #print(ratings)
+    for i in range(1, 4000):#This works but too long.
+        print('o')
+        rating[0] = f'x={i}'
+        for j in range(1, 4000):
+            rating[1] = f'x={j}'
+            for k in range(1, 4000):
+                rating[2] = f'x={k}'
+                for l in range(1, 4000):
+                    rating[3] = f'x={l}'
+                    if check_parts(entry, workflow, rating, 'in') != 0:
+                        result += 1
     end_time = time.time()
     print(f'Time to run Part 2 : {end_time - start_time}s')
     return result
